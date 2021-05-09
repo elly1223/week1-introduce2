@@ -1,12 +1,7 @@
-/*!
-* Start Bootstrap - Freelancer v6.0.6 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
 (function ($) {
-    "use strict"; // Start of use strict
+    "use strict"; // 엄격한 사용 시작
 
-    // Smooth scrolling using anime.js
+    // anime.js를 사용한 부드러운 스크롤
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').on('click', function () {
         if (
             location.pathname.replace(/^\//, "") ==
@@ -29,7 +24,7 @@
         }
     });
 
-    // Scroll to top button appear
+    // 맨 위로 스크롤 버튼이 나타나게 하기
     $(document).scroll(function () {
         var scrollDistance = $(this).scrollTop();
         if (scrollDistance > 100) {
@@ -39,18 +34,18 @@
         }
     });
 
-    // Closes responsive menu when a scroll trigger link is clicked
+    // 스크롤 트리거 링크를 클릭하면 반응 형 메뉴 닫기
     $('.js-scroll-trigger').click(function () {
         $('.navbar-collapse').collapse('hide');
     });
 
-    // Activate scrollspy to add active class to navbar items on scroll
+    // scrollspy를 활성화하여 스크롤의 네비게이션바 항목에 활성 클래스를 추가한다.
     $('body').scrollspy({
         target: '#mainNav',
         offset: 80
     });
 
-    // Collapse Navbar
+    // 네비게이션바 자동접기
     var navbarCollapse = function () {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-shrink");
@@ -58,20 +53,9 @@
             $("#mainNav").removeClass("navbar-shrink");
         }
     };
-    // Collapse now if page is not at top
+    // 페이지가 맨 위에 있지 않으면 접기
     navbarCollapse();
-    // Collapse the navbar when page is scrolled
+    // 페이지가 스크롤 될 때 내비게이션 바를 접기
     $(window).scroll(navbarCollapse);
 
-    // Floating label headings for the contact form
-    $(function () {
-        $("body").on("input propertychange", ".floating-label-form-group", function (e) {
-            $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-        }).on("focus", ".floating-label-form-group", function () {
-            $(this).addClass("floating-label-form-group-with-focus");
-        }).on("blur", ".floating-label-form-group", function () {
-            $(this).removeClass("floating-label-form-group-with-focus");
-        });
-    });
-
-})(jQuery); // End of use strict
+})(jQuery); // 엄격한 사용 끝
